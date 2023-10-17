@@ -17,30 +17,33 @@
 
 <nav>
     <ul class="topmenu">
-        <li><a href="" class="active">Главная<span class="fa fa-angle-down"></span></a>
+        <li><a href="{{route('home')}}" class="active">Главная<span class="fa fa-angle-down"></span></a>
         </li>
-        <li><a href="">Компания</a>
+        <li><a href="{{route('about')}}">О нас</a>
             <ul class="submenu">
-                <li><a href="">меню второго уровня</a>
-                </li>
-                <li><a href="">меню второго уровня<span class="fa fa-angle-down"></span></a>
-                    <ul class="submenu">
-                        <li><a href="">меню третьего уровня</a></li>
-                        <li><a href="">меню третьего уровня</a></li>
-                        <li><a href="">меню третьего уровня</a></li>
-                    </ul>
-                </li>
-                <li><a href="">меню второго уровня</a></li>
+                <li><a href="{{route('about')}}#restaurants">Сеть ресторанов</a></li>
+                <li><a href="{{route('about')}}#accustom">Обслуживание<span class="fa fa-angle-down"></span></a>
+                <li><a href="{{route('about')}}#contacts">Контакты</a></li>
+                <li><a href="{{route('about')}}#awards">Награды</a></li>
+                <li><a href="{{route('about')}}#staff">Персонал</a></li>
+                <li><a href="{{route('about')}}#comments">Отзывы</a></li>
             </ul></li>
-        <li><a href="">Блог</a></li>
-        <li><a href="">Контакты</a></li>
+        <li><a href="{{route('menu')}}">Меню</a></li>
+        <li><a href="">Заказ столика</a></li>
+        <li><a href="">Заказ мероприятия</a></li>
+        <li><a href="">Схема проезда</a></li>
     </ul>
+    @if(!Auth::check())
+    <a href="{{route('login')}}" class="authorizationBlock">Войти</a>
+    @else
+    <a href="{{route('logout')}}" class="authorizationBlock">Выйти</a>
+    @endif
 </nav>
-
+<div class="content">
 @yield('content')
-
+</div>
 <footer>
-    Телефон: 555 3 555<br>Эл. почта: example@gmail.com
+    Телефон: 8 800 555 3 555<br>Эл. почта: example@gmail.com
 </footer>
 </body>
 </html>

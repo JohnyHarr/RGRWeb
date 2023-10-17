@@ -11,8 +11,21 @@ footer {
     padding: 40px 3px 3px;
 }
 
+
+
+.authorizationBlock {
+    width: 15%;
+    height: 100%;
+    min-width: 200px;
+    padding: 20px 30px;
+    border-left: 1px solid rgba(221, 190, 134, 0.79);
+    color: #ddbe86;
+    text-align: center;
+}
+
 nav {
     background: rgb(145, 14, 14);
+    display: flex;
 }
 nav ul {
     margin: 0;
@@ -25,10 +38,16 @@ nav ul:after {
     clear: both;
 }
 nav a {
+    -webkit-text-size-adjust: auto;
     text-decoration: none;
     display: block;
     transition: .3s linear;
 }
+
+.topmenu{
+    width: 90%;
+}
+
 .topmenu > li {
     float: left;
     position: relative;
@@ -59,7 +78,7 @@ nav a {
     border-right: 1px solid #CBCBCC;
     visibility: hidden;
     opacity: 0;
-    transform-origin: 0% 0%;
+    transform-origin: 0 0;
     transform: rotateX(-90deg);
     transition: .3s linear;
 }
@@ -88,7 +107,10 @@ nav li:hover > .submenu {
     margin-right: 100px;
     padding: 30px 10px 10px;
     background: white;
+    min-height: calc(100vh - 200px);
 }
+
+
 
 .slideshow-container {
     max-width: 1000px;
@@ -171,3 +193,161 @@ nav li:hover > .submenu {
 @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
 }
+
+
+.form {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 50px auto 60px auto;
+}
+
+input {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    width: 100%;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    background: transparent;
+    outline: none;
+    border: solid 1px rgba(221, 190, 134, 0.79);;
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.loginForm {
+    width: 400px;
+}
+
+.lastInput{
+    border-bottom: solid 1px rgba(221, 190, 134, 0.79);
+}
+
+.button{
+    text-align: center;
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 0.875em;
+    color: #ddbe86;
+    outline:none;
+    cursor: pointer;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+}
+
+.button:not([disabled]):hover {
+    color: white;
+    background: rgba(221, 190, 134, 0.79);
+}
+
+textarea {
+    width: 100%;
+    height: 110px;
+    max-height: 500px;
+    padding: 15px;
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    outline: none;
+    font-size: 0.875em;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.comments_container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.comments_container .comment_block{
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+    padding: 10px 15px;
+}
+.comment_block .comment_username{
+    min-width: 80%;
+    font-size: 20px;
+}
+
+.comment_block .comment_content{
+    width: 100%;
+}
+
+.error{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #ef4444;
+}
+
+.hidden{
+    display: none;
+}
+
+.comment_block hr{
+    height: 1px;
+    background-color: rgba(221, 190, 134, 0.79);
+    margin-top: 2px;
+    width: 100%;
+    border: none;
+}
+
+.comment_block .comment_timestamp{
+    color: #CBCBCC;
+    min-width:20%;
+    text-align: right;
+}
+
+.foodMenuItemContainer{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.foodMenuItemContainer .foodMenuItemBlock{
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 33%;
+    max-width: 300px;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+    border-radius: 10px;
+}
+
+.foodMenuItemContainer .foodMenuItemBlock .foodMenuItemImg {
+    width: 100%;
+    max-width: 250px;
+}
+
+.foodMenuItemContainer .foodMenuItemBlock .foodMenuItemName {
+    width: 100%;
+}
+
+.foodMenuItemContainer .foodMenuItemBlock .foodMenuItemDescription {
+    font-size: 13px;
+    width: 100%;
+}
+
+.foodMenuItemContainer .foodMenuItemBlock .foodMenuItemPrice {
+    width: 100%;
+    font-size: 20px;
+    text-align: right;
+}
+

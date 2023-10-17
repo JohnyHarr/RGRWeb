@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-   <div class="content">
+
        <div class="slideshow-container">
 
            <div class="mySlides fade">
@@ -39,5 +39,5 @@
            <span class="dot" onclick="currentSlide(3)"></span>
        </div>
        <br>
-   </div>
+
 @endsection
