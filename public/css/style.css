@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    //background: rgba(221, 190, 134, 0.15);
+//background: rgba(221, 190, 134, 0.15);
 }
 
 footer {
@@ -70,7 +70,7 @@ nav a {
 }
 .submenu {
     position: absolute;
-    z-index: 5;
+    z-index: 10;
     min-width: 200px;
     background: white;
     border-top: 1px solid #CBCBCC;
@@ -118,6 +118,13 @@ nav li:hover > .submenu {
     margin: auto;
 }
 
+.slideshow-container_menu {
+    max-width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+
 /* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
@@ -126,7 +133,7 @@ nav li:hover > .submenu {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: rgba(221, 190, 134, 0.79);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -146,7 +153,7 @@ nav li:hover > .submenu {
 
 /* Caption text */
 .text {
-    color: #f2f2f2;
+    color: rgba(221, 190, 134, 0.79);
     font-size: 20px;
     padding: 14px 20px;
     position: absolute;
@@ -155,8 +162,19 @@ nav li:hover > .submenu {
     text-align: left;
 }
 
+.text_menu {
+    font-size: 20px;
+    padding: 14px 20px;
+    position: absolute;
+    top: 0;
+    margin-left: -100px;
+    width: 100%;
+    text-align: left;
+}
+
+
 /* The dots/bullets/indicators */
-.dot {
+.slide_dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -167,7 +185,7 @@ nav li:hover > .submenu {
     transition: background-color 0.6s ease;
 }
 
-.active_dot, .dot:hover {
+.active_dot, .slide_dot:hover {
     background-color: #717171;
 }
 
@@ -218,6 +236,10 @@ input {
     -ms-transition: all 0.3s ease-in-out;
 }
 
+.modal textarea{
+    margin-top: 5px;
+}
+
 .loginForm {
     width: 400px;
 }
@@ -242,6 +264,10 @@ input {
     background: rgba(221, 190, 134, 0.79);
 }
 
+.button:disabled{
+    background: #8080801a;
+}
+
 textarea {
     width: 100%;
     height: 110px;
@@ -258,22 +284,42 @@ textarea {
     -ms-transition: all 0.3s ease-in-out;
 }
 
+.noComments{
+    width: 100%;
+    text-align: center;
+}
+
 .comments_container {
     position: relative;
+    border: solid 1px rgba(221, 190, 134, 0.79);
     width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
+    padding: 10px 0 10px 0px;
 }
 
 .comments_container .comment_block{
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 650px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     border: solid 1px rgba(221, 190, 134, 0.79);
     padding: 10px 15px;
 }
+
+.comments_container form{
+    width: 100%;
+}
+
+
+.comments_container .comment_block:not(:last-child){
+    margin-bottom: 10px;
+}
+
 .comment_block .comment_username{
     min-width: 80%;
     font-size: 20px;
@@ -289,6 +335,14 @@ textarea {
     margin-bottom: 5px;
     font-size: 15px;
     color: #ef4444;
+}
+
+.not_error{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #4CAF50;
 }
 
 .hidden{
@@ -331,8 +385,39 @@ textarea {
     border-radius: 10px;
 }
 
+
+
+.foodMenuItemContainer .foodMenuItemNew{
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 33%;
+    max-width: 300px;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+    border-radius: 10px;
+}
+
+
 .foodMenuItemContainer .foodMenuItemBlock .foodMenuItemImg {
     width: 100%;
+    max-width: 250px;
+}
+
+.foodMenuItemContainer  .foodMenuItemNew .foodMenuItemImg{
+    width: 100%;
+    max-width: 250px;
+}
+
+.foodMenuItemContainer  .foodMenuItemNew .foodMenuItemName{
+    width: 100%;
+    height: 100px;
     max-width: 250px;
 }
 
@@ -342,6 +427,7 @@ textarea {
 
 .foodMenuItemContainer .foodMenuItemBlock .foodMenuItemDescription {
     font-size: 13px;
+    min-height: 100px;
     width: 100%;
 }
 
@@ -350,4 +436,96 @@ textarea {
     font-size: 20px;
     text-align: right;
 }
+
+.menuCategory{
+    width: 100%;
+    padding: 10px;
+    font-size: larger;
+    border-top: solid 1px rgba(221, 190, 134, 0.79);
+    border-bottom: solid 1px rgba(221, 190, 134, 0.79);
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+table.requestsTable{
+    width: 100%;
+    text-align:center;
+    border-collapse:collapse;
+    border-spacing:0;
+    height: auto;
+    margin-bottom: 100px;
+}
+table.requestsTable,table.requestsTable td, table.requestsTable th {
+    border: solid 1px rgba(221, 190, 134, 0.79);
+}
+table.requestsTable td,table.requestsTable th {
+    padding: 3px;
+    width: 30px;
+    height: 35px;
+}
+table.requestsTable th {
+    background: #ddbe86;
+    color: #fff;
+    font-weight: normal;
+    border-right: solid 1px #fff;
+}
+
+table.requestsTable th:last-child{
+    border-right: #ddbe86;
+}
+
+.requests select{
+    margin-top: 5px;
+    height: 50px;
+    border: solid 1px rgba(221, 190, 134, 0.79);
+    min-width:50px;
+    padding:10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.requests .select_rest{
+    width: 50%;
+    margin-right: 50px;
+}
+
+.requests option{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.checkBoxContainer{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.checkBoxContainer .checkbox{
+    width: 20px;
+    height:20px;
+}
+
+p[data-f-id="pbf"] {
+    display: none !important;
+}
+
+.deleteModalInfoHeader{
+    font-size: 20px;
+    margin-top:10px;
+}
+
+h1:not(:first-child){
+    margin-top: 100px;
+}
+
+.checked{
+    background: rgba(221, 190, 134, 0.2);;
+}
+
+
+
 

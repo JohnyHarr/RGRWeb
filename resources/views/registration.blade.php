@@ -16,15 +16,14 @@
                 return false;
             } else {
                 error.addClass('hidden');
-                return await fetch('registration/checkEmail', {
+                return await fetch("{{route('register.checkEmail')}}", {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/xml',
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: login
                 }).then(response => response.text()).then(data => {
-                    console.log(' content:' + data);
+                    console.log('content:' + data + '/'+login);
                     if (data === 'valid') {
                         error.addClass('hidden');
                         return true
@@ -108,14 +107,14 @@
 @endsection
 
 @section('content')
-    <h1 style="width: 100%; text-align: center">Авторизация</h1>
+    <h1 style="width: 100%; text-align: center">Регистрация</h1>
     <form id="form" class="loginForm form"  method="POST" action="{{route('register')}}">
         @csrf
         <input type="text" class="lastInput" name="email" placeholder="Логин(email)" id="login">
         <div id="invalid_login" class="error hidden">Некорректный логин(email)</div>
-        <input type="text" placeholder="Имя" name="username" id="username">
+        <input type="text" class="lastInput" placeholder="Имя" name="username" id="username">
         <div id="invalid_username" class="error hidden">Имя пользователя должно быть непусто</div>
-        <input type="text" placeholder="Пароль" name="password" id="password" class="lastInput">
+        <input type="password" placeholder="Пароль" name="password" id="password" class="lastInput">
         <div id="invalid_password" class="error hidden">Пароль должен содержать хотя бы 8 символов</div>
         <input type="submit" id="register" disabled class="button" value="Зарегистрироваться"></input>
     </form>

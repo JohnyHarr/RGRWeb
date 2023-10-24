@@ -1,0 +1,52 @@
+@extends('adminTemplate')
+
+@section('stylesheets')
+    <link rel="stylesheet" href="{{ asset('./plugins/css/froala_editor.pkgd.css') }}">
+@endsection
+
+@section('script')
+    <script src="{{asset('./js/slider.js')}}"></script>
+    <script src="{{asset('./plugins/js/froala_editor.pkgd.min.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            var editor = new FroalaEditor('#froalaEditor', {heightMin: 350});
+        })
+    </script>
+@endsection
+
+@section('backgroundImage')
+    <div id="background"></div>
+@endsection
+
+@section('content')
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="{{asset('./imgs/home/1.jpg')}}" style="width:100%" alt="r1img1">
+            <div class="text">Ресторан 1</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="{{asset('./imgs/home/2.jpg')}}" style="width:100%" alt="r1img2">
+            <div class="text">Ресторан 1</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="{{asset('./imgs/home/3.jpg')}}" style="width:100%" alt="r1img3">
+            <div class="text">Ресторан 1</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="slide_dot" onclick="currentSlide(1)"></span>
+        <span class="slide_dot" onclick="currentSlide(2)"></span>
+        <span class="slide_dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+
+@endsection

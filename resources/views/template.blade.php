@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     @yield('meta')
     <title>@yield('title')</title>
+    <link href="{{asset('./plugins/css/froala_style.min.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('./css/style.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     @yield('script')
@@ -29,14 +30,14 @@
                 <li><a href="{{route('about')}}#comments">Отзывы</a></li>
             </ul></li>
         <li><a href="{{route('menu')}}">Меню</a></li>
-        <li><a href="">Заказ столика</a></li>
-        <li><a href="">Заказ мероприятия</a></li>
-        <li><a href="">Схема проезда</a></li>
+        <li><a href="{{route('order')}}">Заказ столика</a></li>
+        <li><a href="{{route('banquet')}}">Заказ мероприятия</a></li>
+        <li><a href="{{route('maps')}}">Схема проезда</a></li>
     </ul>
     @if(!Auth::check())
     <a href="{{route('login')}}" class="authorizationBlock">Войти</a>
     @else
-    <a href="{{route('logout')}}" class="authorizationBlock">Выйти</a>
+        <a href="{{route('logout')}}" class="authorizationBlock">{{auth()->user()->name}} <img src="{{asset('./imgs/logout_111063.svg')}}" height="20" style="vertical-align: text-bottom"></a>
     @endif
 </nav>
 <div class="content">
